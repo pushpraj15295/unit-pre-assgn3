@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            body{
+                  text-align: center;
+            }
+           
+            #container{
+                  height: 500px;
+                  width: 80%;
+                  border: 1px solid black;
+                  margin: 0 auto;
+                  text-align:  center;
+            }
+            #container > label{
+                  font-size: 30px;
+                 
+            }
+            input{
+                  height: 30px;
+            }
+            .nav{ 
+                  height: 60px;
+                  width:  100%;
+                  /* border: 1px solid black; */
+                  font-size:40px;
+                  margin-bottom: 70px
+                  
+            }
+      </style>
+</head>
+<body>
+      <h1>Checkout page</h1>
+      <div id="container">
+       <div class="nav">
+             <label>Add Card Details</label>
+       </div>
+       <label>Full Name:</label>
+       <input type="text" id="name"/>
+       <br>
+       <br> 
+       <label> Card Number:</label>
+       <input type="number" id="card"/>
+       <br><br> 
+       <label>CVV:</label>
+       <input type="number" id="cvv"/>
+       <br><br> 
+       <label>Expiry</label>
+       <input type="date" id="expiry"/>
+       <br><br> 
+       <button Onclick="SubmitDetail()">submit</button>
+      </div>
+</body>
+</html>
+
+<script>
+ function SubmitDetail(){
+       var name= document.getElementById("name").value
+       var card =  document.getElementById("card").value
+       var cvv = document.getElementById("cvv").value
+       var expiry = document.getElementById("expiry").value
+    
+       var obj = {
+           "name":name,
+           "card" :card,
+           "cvv" :cvv,
+           "expiry" :expiry,
+      
+       }
+     
+            window.location.href = "otp.html"; 
+       }
+   
+       
+  
+</script>
