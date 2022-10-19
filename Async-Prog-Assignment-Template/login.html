@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+
+        <link rel="stylesheet" href="styles/login.css">
+    </head>
+       
+
+    <body>
+        <!-- navbar -->
+        <div id="container">
+            <a href="index.html"><div> home </div></a>
+            <a href="login.html"><div> login</div></a>
+           <a href="signup.html"><div>signup</div> </a>
+        </div> 
+            
+        <br><br><br><br><br>
+
+        <div id="login-form-div">
+                 <h1> login </h1>
+            <form id="loginForm" onSubmit="loginData()" >
+                <!--Write form input elements here-->
+                <input type="text" id="Lemail" placeholder="enter your email">
+                <br>
+                <input type="text" id="Lpassword" placeholder="Enter your password">
+                 <br>
+                <input type="submit">
+
+            </form>
+
+        </div>
+    </body>
+
+</html>
+
+<script src="scripts/login.js"></script>
