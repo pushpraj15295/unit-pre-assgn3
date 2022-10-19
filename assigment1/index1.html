@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      
+        <style>
+                 input
+                 {
+                     padding:10px;
+                     padding-right:50px;
+                     border-radius: 15px;
+                 }
+
+                 select
+                 {
+                     padding: 5px;
+                 }
+                 #container
+                 {
+                     margin:auto;
+                     text-align: center;
+                     background-color:lightgreen;
+                 }
+
+        </style>
+</head>
+<body>    
+          
+         
+        <form onsubmit="studentdata()" id="f" >  
+
+
+            <div id="container">
+                <input type="name" placeholder="enter your name" id="name">
+                <input type="email" placeholder="inter email" id="email">
+                <input type="text" placeholder="inter your student ID" id="studentId">
+                <input type="number" placeholder="inter your mobile ID" id="mobile">
+
+
+                <!-- <label> <input type="radio"> SOLD </label> -->
+
+                 <label> <input type="checkbox" id="checkbox">  SOLD </label>
+ 
+                 <select name="gender" id="gender"> 
+                               <option value="">gender</option>
+                              <option value="male">Male</option>
+                               <option value="female">Female</option>
+                 </select>
+
+                  <input type="submit" style="border-radius: 10px;">
+                   
+                  
+            </div>
+
+           
+                
+        </form>
+
+        <div id="display"></div>
+</body>
+</html>
+
+<script>
+
+       var array=[]
+            
+               function Student(n,e,i,m,g)
+               {
+                   this.name=n;
+                   this.email=e;
+                   this.studentId=i;
+                   this.mobile=m;
+                   this.gender=g;
+               }
+       
+        
+          function studentdata(e)
+          {
+              event.preventDefault();
+
+              let form= document.getElementById("f");
+
+              let name= form.name.value;
+              let email= form.email.value;
+              let studentId = form.studentId.value;
+              let mobile= form.mobile.value;
+              let gender = form.gender.value;
+
+              let student1 = new Student(name, email,studentId, mobile, gender)
+
+              array.push(student1);
+          }
+
+          console.log(array);
+
+
+
+            
+
+                
+        
+</script>

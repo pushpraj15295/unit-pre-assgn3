@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function myArray() {
+    Object.defineProperty(this, "length", {
+      value: 0,
+      writable: true,
+      enumerable: false,
+    });
+
+    this.length = arguments.length;
+
+    for (let i = 0; i < this.length; i++) {
+      this[i] = arguments[i];
+    }
+  }
+
+  let a2 = new myArray("x", "y", "z");
+
+  myArray.prototype.push = function (value) {
+    let index = this.length;
+    this[index] = value;
+    this.length++;
+  };
+
+  myArray.prototype.pop = function () {
+    let index = this.length - 1;
+
+    delete this[index];
+
+    this.length--;
+  };
+
+  myArray.prototype.top = function () {
+    console.log("Top Element:", a2[a2.length - 1]);
+  };
+
+  myArray.prototype.print = function () {
+    console.log(a2);
+  };
+
+  myArray.prototype.Reverse = function () {
+    var a = [];
+
+    for (var i = this.length - 1; i >= 0; i--) {
+      a.push(a2[i]);
+    }
+
+    console.log(a);
+  };
+  myArray.prototype.size = function () {
+    console.log("size of array:", a2.length);
+  };
+
+  a2.push("a");
+
+  a2.pop();
+
+  a2.print();
+
+  a2.Reverse();
+
+  a2.size();
+
+  console.log("a2:", Object.values(a2));
+</script>
