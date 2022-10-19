@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {box-sizing: border-box}
+      
+      /* Set height of body and the document to 100% */
+      body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial;
+        
+      }
+      
+      /* Style tab links */
+      .tabchange {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+      }
+      
+      .tabchange:hover {
+        background-color: #777;
+      }
+      
+      /* Style the tab content (and add height:100% for full page content) */
+      .tabcontent {
+        color: white;
+        display: none;
+        padding: 100px 20px;
+        height: 100%;
+      }
+      
+      #Home {background-color: red;}
+      #News {background-color: green;}
+      #Contact {background-color: blue;}
+      #About {background-color: orange;}
+      </style>
+  </head>
+  <body>
+    <div id="buttons">
+      <!--Create buttons namely “Scope”, “Hoisting”, ‘Constructor Functions’, ‘Prototype’ in index.html. Each button will have it's respective name as HTML id. For e.g Scope button will HTML id as "scope". ( Note: no capital letter in id )-->
+      <button class="tabchange" onClick="openPage('Home',this,'red')" id="defaultOpen">Scope</button>
+      <button class="tabchange" onClick="openPage('News',this,'green')" >Hoisting</button>
+      <button class="tabchange" onClick="openPage('Contact',this,'blue')">Constructor Functions</button>
+      <button class="tabchange" onClick="openPage('About',this,'grey')">Prototype</button>
+
+      <div id="Home" class="tabcontent" >
+      <h3 style="text-Decoration: underline;">Scope</h3>
+      <ul>JavaScript has 3 types of scope:
+        <li>Global</li>
+        <li>Block</li>
+        <li>Local</li>
+
+      </ul>
+      <h3 style="text-Decoration: underline;">Global Scope</h3>
+      <p>A variable declared outside a function, becomes GLOBAL.</p>
+      <p>let carName = "Volvo";<br>
+        // code here can use carName
+        <br>
+        function myFunction() {
+        <br>// code here can also use carName
+      <br>  }</p>
+
+      <h3 style="text-Decoration: underline;">Local Scope</h3>
+      <p>Variables declared within a JavaScript function, become LOCAL to the function.</p>
+      <p>function myFunction() {<br>
+        let carName = "Volvo";
+        <br>
+      }</p>
+
+      <h3 style="text-Decoration: underline;">Block Scope</h3>
+      <p>Variables declared inside a { } block cannot be accessed from outside the block:</p>
+      <p>{<br>
+        let x = 2;
+<br>      }</p>
+      </div>
+     
+      <div id="News" class="tabcontent">
+        <h3 style="text-Decoration: underline;">Hoisting</h3>
+        <p>In JavaScript, a variable can be declared after it has been used.
+            <br>
+          In other words; a variable can be used before it has been declared.</p>
+          <p>  Example:<br>
+            x = 5; <br>
+
+elem = document.getElementById("demo"); <br>
+elem.innerHTML = x;                    <br>
+
+var x; 
+          </p>
+        </div>
+       
+        <div id="Contact" class="tabcontent">
+          <h3>Constructor Function</h3>
+          <p>This is Home!!</p>
+          </div>
+
+          <div id="About" class="tabcontent">
+            <h3>Home</h3>
+            <p>This is Home!!</p>
+            </div>
+    </div>
+  </body>
+</html>
+<script src="index.js"></script>
